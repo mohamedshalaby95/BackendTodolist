@@ -4,19 +4,24 @@ const todoModel = require("../models/todo");
 const _ = require("lodash");
 const redis = require("redis");
 // const {promisify}=require('util')
-// const redis_port = process.env.redis_port || 6379;
- let client
-if(process.env.Dev_redis_host){
+const redis_port = process.env.redis_port || 6379;
 
-  const redis_port = process.env.Dev_redis_host|| 6379;
+const client = redis.createClient({
+  host: `${process.env.Dev_redis_host}`,
+  port: redis_port,
+});
+//  let client
+// if(process.env.Dev_redis_host){
+
+//   const redis_port = process.env.Dev_redis_host|| 6379;
   
-   client = redis.createClient({
-    host: `${process.env.Dev_redis_host}`,
-    port: redis_port,
-  });
-}else{
-   client = redis.createClient()
-}
+//    client = redis.createClient({
+//     host: `${process.env.Dev_redis_host}`,
+//     port: redis_port,
+//   });
+// }else{
+//    client = redis.createClient()
+// }
 
 // let redisClient
 // if(process.env.Dev_redis_host){
