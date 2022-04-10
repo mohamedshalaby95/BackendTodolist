@@ -11,11 +11,12 @@ var cors = require('cors')
 
 const port=process.env.PORT||3000
 
- app.use(cors({
-    origin: 'https://todolistahamedsami.herokuapp.com',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-}))
+ app.use(cors())
+//  app.use(cors({
+//     origin: 'https://todolistahamedsami.herokuapp.com',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,
+// }))
 
 
 
