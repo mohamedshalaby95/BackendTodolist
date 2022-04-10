@@ -4,7 +4,8 @@ const todoModel = require("../models/todo");
 const _ = require("lodash");
 const redis = require("redis");
 // const {promisify}=require('util')
-const redis_port = process.env.redis_port || 6379;
+// const redis_port = process.env.redis_port || 6379;
+const redis_port = process.env.PORT || 6379;
 
 const client = redis.createClient({
   host: `${process.env.Dev_redis_host}`,
